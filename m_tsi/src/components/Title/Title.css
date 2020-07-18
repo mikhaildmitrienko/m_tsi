@@ -8,35 +8,55 @@
     padding: 1em;
     margin-bottom: 2em;
     background-color: rgb(0, 143, 171);
+    height: 150px;
   }
 
 .Title h1 {
   margin: 0 auto; 
-  font-size: 50px;
+  font-size: 70px;
   font-family: 'Chelsea Market', cursive;
-  color: rgb(255, 136, 128);
+  color: rgb(252, 231, 219);
   height: 0px;
-  position: absolute;
   width: 200px;
   height: 0px;
-  bottom: 420px;
-  left: 21px;
+  bottom: 0px;
+  position: relative;
 }
 
 .Title h2 {
-  font-size: 50px;
+  font-size: 70px;
   font-family: 'Chelsea Market', cursive;
-  color: rgb(252, 231, 219);
-  top: 0;
+  color: rgb(255, 136, 128);
+  top: -58px;
+  left: 9px;
   width: 200px;
   height: 0px;
-  bottom: 420px;
-  left: 21px;
+  position: relative;
+}
+
+.Title h3 {
+  font-family: 'Chelsea Market', cursive;
+  color: rgb(252, 231, 219);
+  font-size: 30px;
+  position: relative;
+  left: 1300px;
+  bottom: 100px;
+}
+
+.Title h4 {
+  font-family: 'Chelsea Market', cursive;
+  color: rgb(252, 231, 219);
+  font-size: 30px;
+  position: relative;
+  left: 1300px;
+  bottom: 130px;
 }
 
 #crab {
   max-width: 200px;
-  max-height: 300px;
-  top: 10px;
-  bottom: 10px;
+  max-height: 260px;
+  top: -70px;
+  left: 1px;
+  bottom: 300px;
+  position: relative;
 }
