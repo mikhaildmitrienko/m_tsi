@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap');
+
 .Title {
     box-sizing: border-box;
     width: 100%;
@@ -6,5 +8,20 @@
     padding: 1em;
     margin-bottom: 2em;
     background-color: rgb(5, 49, 108);
-    color: #fff;
   }
+
+.Title h1 {
+  position: relative; 
+  margin: 0 auto; 
+  font-size: 50px;
+  font-family: 'Chelsea Market', cursive;
+  color: rgb(255, 136, 128);
+  height: 0px;
+}
+
+.Title h2 {
+  font-size: 50px;
+  font-family: 'Chelsea Market', cursive;
+  color: rgb(252, 231, 219);
+  top: 0;
+}
