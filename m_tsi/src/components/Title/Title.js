@@ -6,7 +6,7 @@ function Title(){
 return(
 <div className="Title">
     <header>
-    {/* <img scr={logo} alt="hello"/> */}
+    <img id="crab" src={logo} alt="logo"/>
     <h1>Ancor</h1>
     <h2>Ancor</h2>
     </header>
