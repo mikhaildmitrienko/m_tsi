@@ -2,5 +2,8 @@
     width: 600px;
     outline: 5px blue;
     margin: 20px;
-    border: 2px solid;
+    border: 10px solid;
+    background-color: rgb(5, 49, 108);
+    border-color: rgb(0, 143, 171);
+    height: 300px;
 }
