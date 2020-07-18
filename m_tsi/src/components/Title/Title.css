@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
 
 .Title {
     box-sizing: border-box;
@@ -35,26 +36,26 @@
 }
 
 .Title h3 {
-  font-family: 'Chelsea Market', cursive;
+  font-family: 'Amatic SC', cursive;
   color: rgb(252, 231, 219);
-  font-size: 30px;
+  font-size: 50px;
   position: relative;
   left: 1300px;
-  bottom: 100px;
+  bottom: 120px;
 }
 
 .Title h4 {
-  font-family: 'Chelsea Market', cursive;
+  font-family: 'Amatic SC', cursive;
   color: rgb(252, 231, 219);
-  font-size: 30px;
+  font-size: 50px;
   position: relative;
   left: 1300px;
-  bottom: 130px;
+  bottom: 190px;
 }
 
 #crab {
   max-width: 200px;
-  max-height: 260px;
+  max-height: 330px;
   top: -70px;
   left: 1px;
   bottom: 300px;
