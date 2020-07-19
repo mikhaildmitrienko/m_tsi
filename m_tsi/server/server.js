@@ -3,7 +3,7 @@ const app = express();
 const mqtt = require('mqtt');
 const http = require('http');
 
-require('dotenv').config();
+require('dotenv').config({path: '../.env'});
 
 // var topic_s = "mdmit/feeds/test_feed"
 // client.subscribe(topic_s, {qos:1})
@@ -20,6 +20,7 @@ const options = {
     clean:true
 };
 
+console.log(process.env)
 var client = mqtt.connect('mqtt://io.adafruit.com', options);
 
 client.on("error", function(error){
