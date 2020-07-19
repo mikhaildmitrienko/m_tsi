@@ -6,7 +6,7 @@ import {subscribe} from 'mqtt-react';
 import Button from '../Button/Button'
 import Title from '../Title/Title'
 import NotifBox from '../NotifBox/NotifBox'
-import {mqttService} from '../../mqtt_service/mqtt_module'
+
 var StringDecoder = require('string_decoder').StringDecoder;
 
 
