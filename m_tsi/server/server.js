@@ -3,6 +3,8 @@ const app = express();
 const mqtt = require('mqtt');
 const http = require('http');
 
+require('dotenv').config();
+
 // var topic_s = "mdmit/feeds/test_feed"
 // client.subscribe(topic_s, {qos:1})
 
@@ -13,8 +15,8 @@ const http = require('http');
 
 const options = {
     clientId:"mqttjs01",
-    username:"mdmit",
-    password:"aio_imqT34pO1hu4p3k7qeIbZk5z3bGo",
+    username: process.env.adafruit_username,
+    password: process.env.adafruit_key,
     clean:true
 };
 
