@@ -20,7 +20,15 @@ function App() {
         <NotifBox title="Posture" status="Good"/>
         <NotifBox title="Stress" status="Bad"/>
 
-      </div> 
+      </div>
+      <div className="overlaps">
+        <h1>
+          Posture
+        </h1>
+        <h2>
+          Stress
+        </h2>
+      </div>
     </div>
 
   );

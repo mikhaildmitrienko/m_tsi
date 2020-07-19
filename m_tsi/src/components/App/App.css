@@ -17,7 +17,6 @@
 }
 
 .App-header {
-  background-color: #ffffff;
   min-height: 45vh;
   display: flex;
   flex-direction: column;
@@ -47,4 +46,28 @@
   color: rgb(252, 231, 219);
   font-size: 30px;
   font-family: 'Chelsea Market', cursive;
+}
+
+.overlaps h1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: rgb(255, 136, 128);
+  font-size: 45px;
+  font-family: 'Chelsea Market', cursive;
+  left: -326px;
+  bottom: 322px;
+  position: relative;
+}
+
+.overlaps h2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: rgb(255, 136, 128);
+  font-size: 45px;
+  font-family: 'Chelsea Market', cursive;
+  left: 355px;
+  bottom: 418px;
+  position: relative;
 }
