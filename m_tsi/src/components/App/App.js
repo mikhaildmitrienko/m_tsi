@@ -28,11 +28,11 @@ class App extends React.Component {
       let message = Buffer.from(responseJSON['message']).toString()
 
       if(topic === 'mdmit/feeds/test_feed'){
-        if(this.state.postureStatus != message){
+        if(this.state.postureStatus !== message){
         this.setState({postureStatus: message})
         }
       }else if(topic === 'mdmit/feeds/test_feed2'){
-        if(this.state.stressStatus != message){
+        if(this.state.stressStatus !== message){
         this.setState({stressStatus: message})
         }
       }
