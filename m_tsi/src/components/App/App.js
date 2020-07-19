@@ -9,6 +9,7 @@ import NotifBox from '../NotifBox/NotifBox'
 import {mqttService} from '../../mqtt_service/mqtt_module'
 var StringDecoder = require('string_decoder').StringDecoder;
 
+
 class App extends React.Component {
 
   constructor(props){
@@ -53,6 +54,7 @@ class App extends React.Component {
 
   render(){
     return(
+
     <div className="App">
     <Title/>
       <div className="App-header">
@@ -67,6 +69,7 @@ class App extends React.Component {
     </div>)
   }
   
+
 }
 
 export default App;
