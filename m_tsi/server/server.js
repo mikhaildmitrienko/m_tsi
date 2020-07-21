@@ -5,22 +5,13 @@ const http = require('http');
 
 require('dotenv').config({path: '../.env'});
 
-// var topic_s = "mdmit/feeds/test_feed"
-// client.subscribe(topic_s, {qos:1})
-
-// client.on('message',function(topic, message, packet){
-// 	console.log("message is "+ message);
-// 	console.log("topic is "+ topic);
-// });
-
 const options = {
-    clientId:"mqttjs01",
-    username: process.env.adafruit_username,
-    password: process.env.adafruit_key,
+    clientId:"mqttjs02",
+    username: process.env.isita_adafruit_username,
+    password: process.env.isita_adafruit_key,
     clean:true
 };
 
-console.log(process.env)
 var client = mqtt.connect('mqtt://io.adafruit.com', options);
 
 client.on("error", function(error){
@@ -44,7 +35,7 @@ http.createServer((request, response) => {
             "Access-Control-Allow-Origin": "*"
         })
         
-        var topic_list = ["mdmit/feeds/test_feed", "mdmit/feeds/test_feed2"]
+        var topic_list = [process.env.isita_feed_1]
         client.subscribe(topic_list, {qos:1})
         
         client.on('message', function(topic, message, packet){
