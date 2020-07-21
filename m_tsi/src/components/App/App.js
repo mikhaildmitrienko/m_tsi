@@ -4,7 +4,7 @@ import Button from '../Button/Button'
 import Title from '../Title/Title'
 import NotifBox from '../NotifBox/NotifBox'
 import Popup from 'reactjs-popup';
-
+import Timer from '../Timer/Timer'
 
 require('dotenv').config({path: '../.env'});
 
@@ -18,8 +18,10 @@ class App extends React.Component {
       postureStatus: 'Good',
       stressStatus: 'Good',
       warningCount: 0,
-      popUpState: false
+      popUpState: false,
+      frequencyCount: []
     };
+    this.closePopUp = this.closePopUp.bind(this)
   }
 
   reminderLogic(topic, message){
@@ -70,7 +72,16 @@ class App extends React.Component {
     }
   }
 
-  
+  toggleCollect() {
+    if(this.state.collect === false){
+      this.setState({collect: true})
+    }else{
+      this.setState({collect: false})
+    }
+  }
+
+
+
   componentDidMount() {
     this.handleStream()
 
@@ -82,12 +93,13 @@ class App extends React.Component {
      }
   }
 
-  toggleCollect() {
-    if(this.state.collect === false){
-      this.setState({collect: true})
-    }else{
-      this.setState({collect: false})
-    }
+
+  closePopUp(){
+    this.setState({popUpState: false})
+  }
+
+  openPopUp(){
+    this.setState({popUpState: true})
   }
 
   render(){
@@ -97,19 +109,23 @@ class App extends React.Component {
     <div className="App">
     <Title/>
       <div className="App-header">
-      <Button/>
+
+      <Timer/>
       </div>
 
       <div className="notifs">
         <NotifBox title="Posture" status={this.state.postureStatus}/>
         <NotifBox title="Stress" status={this.state.stressStatus}/>
       </div> 
-      <Popup open={this.state.popUpState} modal>
+
+
+        <Popup open={this.state.popUpState} modal onClose={this.closePopUp}>
         <h1>Energize!</h1>
         <h2>You've been sitting for a while now, <br/> so let's energize!</h2>
         
         <h3>Please roll your neck for <em> 5 minutes</em></h3>
       </Popup>
+
 
     </div>)
   }
