@@ -34,16 +34,19 @@ const Timer = (props) => {
 
     return(
     <div className="app">
-    <h1>Start tracker!</h1>
+    
+    {isActive ? <h1></h1>:  <h1>Start your session!</h1>}
+   
+      
       <div className="time">
         {seconds}s
       </div>
       <div className="row">
-      {isActive ?<Button src={pauseImage} onClick={toggle}>
-        </Button> : <Button src={playImage} onClick={toggle}></Button>}
-        <button className="button" onClick={reset}>
-          Reset
-      </button>
+      {isActive ?  <Button src={pauseImage} onClick={toggle}>
+        </Button> : <div><Button src={playImage} onClick={toggle}></Button><button className="button" onClick={reset}>
+          Finish session
+      </button> </div> }
+        
       </div>
     </div>);
 }

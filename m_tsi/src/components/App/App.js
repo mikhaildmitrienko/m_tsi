@@ -101,15 +101,6 @@ class App extends React.Component {
      }
   }
 
-  // getReport(){
-  //   let data = this.state.percentages;
-  //   let classes = ['Bad', 'Warning', 'Good']
-  //   let counts = []
-  //   for(let i=0; i<=2; i++){
-  //     counts[i] = data.filter(c => c === classes[i]).length / data.length;
-  //   }
-  //   this.setState({percentages: counts, showReport: true})
-  // }
   onReset(){
     let data = this.state.frequency
     let classes = ['Bad', 'Warning', 'Good']
@@ -121,8 +112,6 @@ class App extends React.Component {
      this.setState({percentages: counts, showReport: true, collect: false, frequency: []})
 
   }
-
-
 
   closePopUp(){
     this.setState({popUpState: false})
@@ -150,9 +139,10 @@ class App extends React.Component {
     let report;
     if(this.state.showReport){
       report = (
-      <p> 'Good' posture: {this.state.percentages[2]}% <br/> 
-      'Warning' posture {this.state.percentages[1]}% <br/>
-      'Bad' posture for {this.state.percentages[0]}% of the time</p>
+      <p> Session report: <br/> 
+        'Good' posture: {this.state.percentages[2]}% <br/> 
+      'Warning' posture: {this.state.percentages[1]}% <br/>
+      'Bad' posture: {this.state.percentages[0]}% </p>
         )
     }
 
@@ -167,7 +157,7 @@ class App extends React.Component {
 
       <div className="notifs">
         <NotifBox title="Posture" src={this.stateEval()}/>
-        <NotifBox title="Stress" src={this.stateEval()}/>
+        <NotifBox title="Stress" src={goodIcon}/>
       </div> 
 
 

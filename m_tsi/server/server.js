@@ -64,21 +64,3 @@ http.createServer((request, response) => {
 
 
 
-
-
-// var net = require('net')
-// var mqttCon = require('mqtt-connection')
-// var stream = net.createConnection(8883, 'io.adafruit.com')
-// var conn = mqttCon(stream)
-
-// const options = {
-//     username: 'mdmit',
-//     password: 'aio_imqT34pO1hu4p3k7qeIbZk5z3bGo',
-//     clientId: 'my-device'
-// }
-
-// conn.connect(options);
-
-// console.log(conn.console)
-
-// console.log("Connected?")
