@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 const StyledImage = styled.img`
-        width: 500px;
+        width: 130px;
         &:hover{
                 opacity: 0.8;
         }

@@ -7,7 +7,7 @@ import Popup from 'reactjs-popup';
 import Timer from '../Timer/Timer'
 import badIcon from '../App/bad.png'
 import goodIcon from '../App/good.png'
-import warnIcon from '../App/warn.png'
+import warnIcon from '../App/warning.png'
 
 require('dotenv').config({path: '../.env'});
 
@@ -132,6 +132,18 @@ class App extends React.Component {
     this.setState({popUpState: true})
   }
 
+  stateEval(postureStatus) {
+    if (this.state.postureStatus == 'Good') {
+      return goodIcon;
+    } else {
+      if (this.state.postureStatus == 'Bad') {
+        return badIcon;
+      } else {
+        return warnIcon;
+      }
+    }
+  }
+
   render(){
 
     const showReport = this.state.showReport;
@@ -154,8 +166,8 @@ class App extends React.Component {
       </div>
 
       <div className="notifs">
-        <NotifBox title="Posture" status={this.state.postureStatus}/>
-        <NotifBox title="Stress" status={this.state.stressStatus}/>
+        <NotifBox title="Posture" src={this.stateEval()}/>
+        <NotifBox title="Stress" src={this.stateEval()}/>
       </div> 
 
 
