@@ -29,7 +29,7 @@
   font-family: 'Chelsea Market', cursive;
   color: rgb(255, 136, 128);
   top: -58px;
-  left: 9px;
+  left: 5px;
   width: 200px;
   height: 0px;
   position: relative;
@@ -39,18 +39,21 @@
   font-family: 'Amatic SC', cursive;
   color: rgb(252, 231, 219);
   font-size: 50px;
-  position: relative;
   left: 1300px;
   bottom: 120px;
+  position: relative;
+  right: 10px;
 }
 
 .Title h4 {
   font-family: 'Amatic SC', cursive;
   color: rgb(252, 231, 219);
   font-size: 50px;
-  position: relative;
   left: 1300px;
   bottom: 190px;
+  position: relative;
+  right: 10px;
+  max-width: 50px;
 }
 
 #crab {

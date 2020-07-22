@@ -43,8 +43,6 @@ const Timer = (props) => {
         </button>
       </div>
     </div>);
-
-
 }
 
 export default Timer;
