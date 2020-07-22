@@ -12,8 +12,11 @@ return(
         <header>
             <h1>Ancor</h1>
             <h2>Ancor</h2>
-            <h3>Our Team</h3>
-            <h4>Motto/Slogan</h4>
+            <h3>Set Sail for a</h3>
+            <h4>Better Work Day</h4>
+            <hr class="solid"></hr>
+            <hr class="solid1"></hr>
+            <hr class="solid2"></hr>
         </header>
     </div>
 </div>)
