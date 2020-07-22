@@ -5,6 +5,9 @@ import Title from '../Title/Title'
 import NotifBox from '../NotifBox/NotifBox'
 import Popup from 'reactjs-popup';
 import Timer from '../Timer/Timer'
+import badIcon from '../App/bad.png'
+import goodIcon from '../App/good.png'
+import warnIcon from '../App/warn.png'
 
 require('dotenv').config({path: '../.env'});
 

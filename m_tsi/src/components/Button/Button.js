@@ -1,13 +1,19 @@
 import React from 'react';
-
-function Button(props) {
-return (<div>
-                <h1>Start tracker!</h1>
-                        <button onClick={props.onClick}>
-                                Start
-                        </button>
-        </div>)
+import styled from 'styled-components';
 
 
-}
+const StyledImage = styled.img`
+        width: 500px;
+        &:hover{
+                opacity: 0.8;
+        }
+        
+`
+
+const Button = props=>{
+return (<div onClick={props.onClick}>
+      <h1>{props.label}</h1>
+      <StyledImage src={props.src}>{props.children}</StyledImage>
+      </div>)
+      }
 export default Button;

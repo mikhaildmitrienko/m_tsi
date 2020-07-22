@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './Timer.css';
-
+import Button from '../Button/Button';
+import playImage from '../Button/play.png'
+import pauseImage from '../Button/pause.png'
 
 const Timer = (props) => {
 
@@ -35,12 +37,11 @@ const Timer = (props) => {
         {seconds}s
       </div>
       <div className="row">
-        <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
-          {isActive ? 'Pause' : 'Start'}
-        </button>
+      {isActive ?<Button src={pauseImage} onClick={toggle}>
+        </Button> : <Button src={playImage} onClick={toggle}></Button>}
         <button className="button" onClick={reset}>
           Reset
-        </button>
+      </button>
       </div>
     </div>);
 }
