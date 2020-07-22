@@ -10,12 +10,14 @@ const Timer = (props) => {
     const [isActive, setIsActive] = useState(false);
 
     function toggle(){
-        setIsActive(!isActive)
+        setIsActive(!isActive);
+        props.toggleCollect()
     }
 
     function reset(){
         setSeconds(0);
         setIsActive(false);
+        props.onReset();
     }
 
     useEffect(() => {

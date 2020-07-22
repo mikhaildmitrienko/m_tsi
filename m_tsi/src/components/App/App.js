@@ -22,15 +22,22 @@ class App extends React.Component {
       stressStatus: 'Good',
       warningCount: 0,
       popUpState: false,
-      frequencyCount: []
+      frequency: [],
+      percentages: [],
+      report: {},
+      showReport: false
     };
     this.closePopUp = this.closePopUp.bind(this)
+    this.toggleCollect = this.toggleCollect.bind(this)
+    this.onReset = this.onReset.bind(this)
   }
 
   reminderLogic(topic, message){
     if(topic === 'IsitaT03/feeds/posture'){
       this.setState({postureStatus: message})
 
+      this.setState({frequency: this.state.frequency.concat(message)})
+      console.log(this.state.frequency)
       switch(message){
         case 'Warning':
           this.setState({warningCount: this.state.warningCount + 1})
@@ -40,7 +47,6 @@ class App extends React.Component {
           break;
         case 'Bad':
           this.setState({postureStatus: message, warningCount: 0, popUpState:true})
-          // alert('Lean back, your posture is really bad')
 
           break;
         case 'Good':
@@ -71,23 +77,22 @@ class App extends React.Component {
       let responseJSON = JSON.parse(e.data);
       let topic = Buffer.from(responseJSON['topic']).toString()
       let message = Buffer.from(responseJSON['message']).toString()
-      this.reminderLogic(topic, message)
+      if(this.state.collect){
+        this.reminderLogic(topic, message)
+      }
     }
   }
 
   toggleCollect() {
-    if(this.state.collect === false){
-      this.setState({collect: true})
-    }else{
-      this.setState({collect: false})
+    if(this.state.showReport){
+      this.setState({showReport: false, percentages: []})
     }
+    this.setState({collect: !this.state.collect})
+
   }
 
-
-
   componentDidMount() {
-    this.handleStream()
-
+    this.handleStream();
   }
 
   componentWillUnmount() {
@@ -95,6 +100,28 @@ class App extends React.Component {
      this.eventSource.close();
      }
   }
+
+  // getReport(){
+  //   let data = this.state.percentages;
+  //   let classes = ['Bad', 'Warning', 'Good']
+  //   let counts = []
+  //   for(let i=0; i<=2; i++){
+  //     counts[i] = data.filter(c => c === classes[i]).length / data.length;
+  //   }
+  //   this.setState({percentages: counts, showReport: true})
+  // }
+  onReset(){
+    let data = this.state.frequency
+    let classes = ['Bad', 'Warning', 'Good']
+    let counts = []
+    for(let i=0; i<=2; i++){
+      counts[i] = data.filter(c => c === classes[i]).length / data.length;
+      counts[i] = Math.round((counts[i] * 100) * 10) / 10
+    }
+     this.setState({percentages: counts, showReport: true, collect: false, frequency: []})
+
+  }
+
 
 
   closePopUp(){
@@ -107,13 +134,23 @@ class App extends React.Component {
 
   render(){
 
-    return(
+    const showReport = this.state.showReport;
+    let report;
+    if(this.state.showReport){
+      report = (
+      <p> 'Good' posture: {this.state.percentages[2]}% <br/> 
+      'Warning' posture {this.state.percentages[1]}% <br/>
+      'Bad' posture for {this.state.percentages[0]}% of the time</p>
+        )
+    }
 
+    return(
     <div className="App">
     <Title/>
       <div className="App-header">
 
-      <Timer/>
+      <Timer toggleCollect={this.toggleCollect} onReset={this.onReset}/>
+      {report}
       </div>
 
       <div className="notifs">
