@@ -3,6 +3,7 @@ import './Timer.css';
 import Button from '../Button/Button';
 import playImage from '../Button/play.png'
 import pauseImage from '../Button/pause.png'
+import endImage from '../Timer/end_sess (2).png'
 
 const Timer = (props) => {
 
@@ -43,9 +44,9 @@ const Timer = (props) => {
       </div>
       <div className="row">
       {isActive ?  <Button src={pauseImage} onClick={toggle}>
-        </Button> : <div><Button src={playImage} onClick={toggle}></Button><button className="button" onClick={reset}>
-          Finish session
-      </button> </div> }
+        </Button> : <div><Button src={playImage} onClick={toggle}></Button>
+        <Button id="end-button" onClick={reset} src={endImage}>
+      </Button> </div> }
         
       </div>
     </div>);
